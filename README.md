@@ -27,6 +27,8 @@
  * 服务安装
 + PosInfoCollectionTest
  * 命令行测试
++ ServiceSetup
+ * 服务安装打包
 + resource
  * 原始图片资源备份
 + test-bin
