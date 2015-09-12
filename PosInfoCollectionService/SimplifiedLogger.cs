@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace FtpClient
+namespace PosInfoCollection
 {
-    class SimplifiedLogger
+    public class SimplifiedLogger
     {
         // 日志保存文件的周期
         public enum LogPeriod
@@ -29,13 +29,12 @@ namespace FtpClient
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="dir">日志目录</param>
         /// <param name="period">保存周期</param>
         /// <param name="postfix">文件后缀</param>
-        private SimplifiedLogger(LogPeriod period, string postfix)
+        private SimplifiedLogger(DirectoryInfo dir, LogPeriod period, string postfix)
         {
-            // 当前程序目录
-            string logPath = System.Environment.CurrentDirectory + "\\" + "logs";
-            logDir = new DirectoryInfo(logPath);
+            logDir = dir;
             if (!logDir.Exists)
             {
                 logDir.Create();
@@ -63,34 +62,33 @@ namespace FtpClient
                 fileName.Append("_").Append(postfix);
             }
             fileName.Append(".txt");
-            logFile = new FileInfo(logPath + "\\" + fileName);
+            logFile = new FileInfo(logDir.FullName + "\\" + fileName);
         }
 
 
-        public static SimplifiedLogger Singleton(LogPeriod period, string postfix)
+        public static SimplifiedLogger Singleton(DirectoryInfo dir, LogPeriod period, string postfix)
         {
             if (obj == null)
             {
-                obj = new SimplifiedLogger(period, postfix);
+                obj = new SimplifiedLogger(dir, period, postfix);
             }
             return obj;
         }
 
-        public static SimplifiedLogger Singleton(LogPeriod period)
+        public static SimplifiedLogger Singleton(DirectoryInfo dir, LogPeriod period)
         {
-            return Singleton(period, String.Empty);
+            return Singleton(dir, period, String.Empty);
         }
 
-        public static SimplifiedLogger Singleton(string postfix)
+        public static SimplifiedLogger Singleton(DirectoryInfo dir, string postfix)
         {
-            return Singleton(LogPeriod.DAY, postfix);
+            return Singleton(dir, LogPeriod.DAY, postfix);
         }
 
-        public static SimplifiedLogger Singleton()
+        public static SimplifiedLogger Singleton(DirectoryInfo dir)
         {
-            return Singleton(LogPeriod.DAY, String.Empty);
+            return Singleton(dir, LogPeriod.DAY, String.Empty);
         }
-
 
         private bool logAct(LogType type, string content)
         {

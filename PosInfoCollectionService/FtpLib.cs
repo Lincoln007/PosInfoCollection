@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace FtpClient
+namespace PosInfoCollection.Libs
 {
     // http://www.cnblogs.com/swtseaman/archive/2011/03/29/1998611.html
     // http://blog.sina.com.cn/s/blog_66eff145010133ea.html
@@ -17,7 +17,7 @@ namespace FtpClient
         private string ftpHost;
         private string ftpUsername;
         private string ftpPassword;
-        private int ftpPort = 21;
+        private int ftpPort = -1;
 
         public enum FtpFileType
         {
@@ -276,8 +276,9 @@ namespace FtpClient
         public bool FileExist(string remotePath)
         {
             bool result = false;
-            List<FtpFileInfo> list = GetFilesDetailList(remotePath);
             Uri uri = pieceUri(remotePath);
+            Uri parent = new Uri(uri, "./");
+            List<FtpFileInfo> list = GetFilesDetailList(parent.AbsolutePath);
             string[] seg = uri.Segments;
             string fileName = seg[seg.Length - 1];
             foreach (FtpFileInfo file in list)

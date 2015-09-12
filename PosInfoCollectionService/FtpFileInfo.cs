@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace FtpClient
+namespace PosInfoCollection.Libs
 {
     // https://github.com/muriarte/FtpUtil
     public class FtpFileInfo

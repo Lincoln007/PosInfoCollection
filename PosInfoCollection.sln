@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PosInfoCollectionTest", "PosInfoCollectionTest\PosInfoCollectionTest.csproj", "{0D9AB986-CBE1-4863-8A97-1D3CA3558557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PosInfoCollectionService", "PosInfoCollectionService\PosInfoCollectionService.csproj", "{3A85B9B1-0698-4BC7-AFC4-1D21D845F281}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D9AB986-CBE1-4863-8A97-1D3CA3558557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D9AB986-CBE1-4863-8A97-1D3CA3558557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D9AB986-CBE1-4863-8A97-1D3CA3558557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D9AB986-CBE1-4863-8A97-1D3CA3558557}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A85B9B1-0698-4BC7-AFC4-1D21D845F281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A85B9B1-0698-4BC7-AFC4-1D21D845F281}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A85B9B1-0698-4BC7-AFC4-1D21D845F281}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A85B9B1-0698-4BC7-AFC4-1D21D845F281}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
